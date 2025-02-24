@@ -1,8 +1,10 @@
+// Variables a usar
 :root {
   --primary-color: #324151;
   --background: #EDF0F4;
 }
 
+// Estilos de la sección "Call to Action"
 .call-to-action {
   background-color: var(--background);
   width: 100%;
