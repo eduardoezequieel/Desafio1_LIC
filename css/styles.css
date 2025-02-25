@@ -1,20 +1,103 @@
-// Variables a usar
+/* variables */
 :root {
   --primary-color: #324151;
-  --background: #EDF0F4;
+  --background: #EDF0F4;  
+  --inner-background: #C9D3DD;
 }
 
-// Estilos de la sección "Call to Action"
+/* decoraciones de fondo */
+.background-circle {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  background-color: var(--inner-background);
+  left: 800px;
+  top: 102px;
+  clip-path: circle(50% at 50% 50%);
+  content: " ";
+  z-index: -1;
+}
+
+.background-mountain {
+  position: absolute;
+  width: 120px; /* Ajusta según sea necesario */
+  height: 100px; /* Ajusta según sea necesario */
+  background-color: var(--inner-background);
+  right: 750px; /* Ajusta según la posición deseada */
+  top: 90px; /* Ajusta según la posición deseada */
+  clip-path: polygon(30% 0%, 100% 100%, 0% 100%);
+  content: " ";
+  z-index: -1;
+}
+
+
+/* estilos para sección Call to Action */
 .call-to-action {
+  z-index: 1;
   background-color: var(--background);
   width: 100%;
   display: flex;
+  gap: 5px;
   flex-direction: column;
   align-items: center;
-  height: 40vh;
+  min-height: 40vh;
   padding-block: 40px;
+  position: relative;
 }
 
 .call-to-action h1 {
   color: var(--primary-color);
+}
+
+/* elementos especificos */
+.summary-container {
+  padding-block: 10px;
+  padding-inline: 50px;
+  width: 280px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  border-radius: 4px;
+}
+
+.percentage-parent-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 280px;
+}
+
+.percentage-parent-container span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#percentage-container {
+  background-color: var(--primary-color);
+  color: white;
+  padding-block: 5px;
+  padding-inline: 15px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.summary-container-title {
+  max-width: 84px;
+  min-width: 84px;
+}
+
+#income-container {
+  border: 2px solid transparent;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+#revenue-container {
+  border: 2px solid var(--primary-color);
+  background-color: white;
+  color: var(--primary-color);
+}
+
+#income-container span, #revenue-container span {
+  font-weight: 600;
 }
