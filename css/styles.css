@@ -11,8 +11,9 @@
   width: 85px;
   height: 85px;
   background-color: var(--inner-background);
-  left: 800px;
-  top: 102px;
+  left: 55%; /* Slightly to the right of the center */
+  transform: translate(-50%, -50%);
+  top: 130px; /* Center vertically */
   clip-path: circle(50% at 50% 50%);
   content: " ";
   z-index: -1;
@@ -20,14 +21,16 @@
 
 .background-mountain {
   position: absolute;
-  width: 120px; /* Ajusta según sea necesario */
-  height: 100px; /* Ajusta según sea necesario */
+  width: 270px; /* Ajusta según sea necesario */
+  height: 220px; /* Ajusta según sea necesario */
   background-color: var(--inner-background);
-  right: 750px; /* Ajusta según la posición deseada */
-  top: 90px; /* Ajusta según la posición deseada */
-  clip-path: polygon(30% 0%, 100% 100%, 0% 100%);
+  left: 50%; /* Ajusta según la posición deseada */
+  transform: translate(-50%, -50%);
+  top: 260px; /* Ajusta según la posición deseada */
   content: " ";
   z-index: -1;
+  clip-path: polygon(1% 71%, 32% 1%, 50% 35%, 65% 23%, 91% 70%, 45% 80%);
+  border-radius: 50px;
 }
 
 
