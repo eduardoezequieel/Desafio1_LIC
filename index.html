@@ -7,11 +7,12 @@
   <!-- Importación de estilos -->
   <link rel="stylesheet" href="css/styles.css">
   <link href="lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="lib/font-awesome/all.min.css">
   <title>Budgets App</title>
 </head>
 
 <body>
-  <main class="d-flex flex-col">
+  <main class="d-flex flex-column">
     <!-- Esta sección contiene el CallToAction de la aplicación en donde se muestra el resumen del presupuesto del mes
     actual. Se muestra el total del presupuesto, los ingresos, los egresos y el porcentaje de gastos. -->
     <section class="call-to-action">
@@ -37,6 +38,27 @@
         <span>Porcentaje de gastos:</span>
         <div id="percentage-container">12%</div>
       </div>
+    </section>
+    <section class="form-container">
+      <form class="d-flex gap-3 flex flex-column w-50" action="">
+        <div class="d-flex gap-3">
+          <div class="icon-container">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <h2 class="text-system-color">Transacción</h2>
+        </div>
+        <div class="select-wrapper">
+          <select aria-label="Default select example">
+            <option selected>Ingreso | Egreso</option>
+            <option value="1">Ingreso</option>
+            <option value="2">Egreso</option>
+          </select>
+        </div>
+        <input type="text" name="" placeholder="Descripción" id="">
+        <input type="number" name="" placeholder="Monto" id="">
+        <button type="submit" class="btn w-auto btn-primary">Agregar</button>
+      </form>
+      <div></div>
     </section>
   </main>
   <!-- Importación de scripts -->

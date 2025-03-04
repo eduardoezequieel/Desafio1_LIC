@@ -3,6 +3,56 @@
   --primary-color: #324151;
   --background: #EDF0F4;  
   --inner-background: #C9D3DD;
+  --icon-color: #A2B0C2;
+  --border-color: #CED7E0;
+}
+
+/* estilos globales */
+
+.text-system-color {
+  color: var(--primary-color);
+}
+
+.select-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+select {
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  padding-block: 10px;
+  padding-inline: 15px;
+  color: var(--primary-color);
+  -webkit-appearance: none; /* For Chrome, Safari, and Opera */
+  -moz-appearance: none; /* For Firefox */
+  appearance: none; /* For other browsers */
+  transition: border 0.2s ease-in-out;
+  width: 100%;
+}
+
+.select-wrapper::after {
+  content: '\25BC'; /* down arrow */
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-left: 2px solid var(--border-color);
+  height: 47px; 
+  width: 30px; 
+  padding-top: 12px;
+  padding-left: 6px;
+  pointer-events: none;
+  transition: background 0.2s ease-in-out;
+}
+
+select:focus {
+  outline: none;
+  border: 2px solid var(--primary-color);
+}
+
+option:checked {
+  background-color: var(--primary-color);
+  color: white;
 }
 
 /* decoraciones de fondo */
@@ -53,6 +103,22 @@
 }
 
 /* elementos especificos */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  width: 45px;
+  height: 45px;
+  border-radius: 100%
+}
+
+.icon-container > i {
+  color: red;
+  font-weight: 900;
+  color: var(--icon-color);
+}
+
 .summary-container {
   padding-block: 10px;
   padding-inline: 50px;
@@ -103,4 +169,13 @@
 
 #income-container span, #revenue-container span {
   font-weight: 600;
+}
+
+/* estilos para formulario */
+.form-container {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap: 20px;
 }
