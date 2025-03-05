@@ -13,6 +13,32 @@
   color: var(--primary-color);
 }
 
+.custom-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding-block: 10px;
+  padding-inline: 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  font-weight: 700;
+}
+
+.custom-input {
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  padding-block: 10px;
+  padding-inline: 15px;
+  color: var(--primary-color);
+  transition: border 0.2s ease-in-out;
+}
+
+.custom-input:focus {
+  outline: none;
+  border: 2px solid var(--primary-color);
+}
+
 .select-wrapper {
   position: relative;
   height: 100%;
@@ -178,4 +204,18 @@ option:checked {
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   gap: 20px;
+}
+
+.form-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: #F1F3F7;
+}
+
+.form-container >  form {
+  width: 250px;
 }
