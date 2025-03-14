@@ -19,28 +19,28 @@
       <div class="background-circle"></div>
       <div class="background-mountain"></div>
       <div class="text-center">
-        <h1>Presupuesto de<br>Julio 2020</h1>
-        <h1 class="mt-4">+500.00</h1>
+        <h1>Presupuesto de<br><span id="current-date">Julio 2020</span></h1>
+        <h1 class="mt-4" id="balance-counter">$0.00</h1>
       </div>
       <div class="summary-container mt-2" id="income-container">
         <div class="summary-container-title">
           <span>INGRESOS:</span>
         </div>
-        <span>+800.00</span>
+        <span id="income-counter">+$0.00</span>
       </div>
       <div class="summary-container mt-2" id="revenue-container">
         <div class="summary-container-title">
           <span>EGRESOS:</span>
         </div>
-        <span>-300.00</span>
+        <span id="revenue-counter">-$0.00</span>
       </div>
       <div class="percentage-parent-container mt-2">
         <span>Porcentaje de gastos:</span>
-        <div id="percentage-container">12%</div>
+        <div id="percentage-container">0%</div>
       </div>
     </section>
     <section class="form-container">
-      <form class="d-flex gap-4 flex flex-column" action="">
+      <form id="transaction-form" class="d-flex gap-4 flex flex-column">
         <div class="d-flex gap-3">
           <div class="icon-container">
             <i class="fa-solid fa-plus"></i>
@@ -48,19 +48,27 @@
           <h2 class="text-system-color">Transacción</h2>
         </div>
         <div class="select-wrapper">
-          <select aria-label="Default select example">
-            <option selected>Ingreso | Egreso</option>
+          <select required name="transactionType" aria-label="Default select example">
+            <option value="" selected>Ingreso | Egreso</option>
             <option value="1">Ingreso</option>
             <option value="2">Egreso</option>
           </select>
         </div>
-        <input class="custom-input" type="text" name="" placeholder="Descripción" id="">
-        <input class="custom-input" type="number" name="" placeholder="Monto" id="">
+        <input name="description" class="custom-input" type="text" placeholder="Descripción" required>
+        <input name="amount" class="custom-input" type="number" placeholder="Monto" required>
         <div class="align-self-center">
           <button type="submit" class="custom-btn">Agregar</button>
         </div>
       </form>
-      <div>here goes another content</div>
+      <div>
+        <div class="tabs-container">
+          <button data-transaction-type="1" type="button" class="active">Ingresos</button>
+          <button data-transaction-type="2" type="button">Egresos</button>
+        </div>
+        <div class="transactions-container">
+          <!-- los elementos del loop se agregan aqui  -->
+        </div>
+      </div>
     </section>
   </main>
   <!-- Importación de scripts -->

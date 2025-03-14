@@ -219,3 +219,67 @@ option:checked {
 .form-container >  form {
   width: 250px;
 }
+
+/* estilos para tabs */
+
+.tabs-container {
+  display: flex;
+  background-color: #D6D6D6;
+  border-radius: 10px;
+}
+
+.tabs-container > button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding-block: 15px;
+  padding-inline: 80px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.2s ease-in-out;
+}
+
+.tabs-container > button.active {
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* estilos para transacciones */
+.transactions-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #CDCDCD;
+  padding: 10px;
+  position: relative;
+}
+
+.transaction-item-control > button {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border: none;
+  font-size: 10px;
+  border-radius: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  right: -10px; 
+}
+
+.transaction-item > span {
+  font-size: 20px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
