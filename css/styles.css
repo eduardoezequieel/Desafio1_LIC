@@ -200,10 +200,23 @@ option:checked {
 /* estilos para formulario */
 .form-container {
   margin-top: 40px;
+  padding-bottom: 70px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   gap: 20px;
+}
+
+@media (max-width: 1010px) {
+  .form-container {
+    grid-template-columns: 1fr;
+    gap: 70px;
+    height: 100%;
+  }
+
+  .form-container::before {
+    display: none;
+  }
 }
 
 .form-container::before {
@@ -214,10 +227,6 @@ option:checked {
   left: 50%;
   width: 2px;
   background-color: #F1F3F7;
-}
-
-.form-container >  form {
-  width: 250px;
 }
 
 /* estilos para tabs */
@@ -279,6 +288,12 @@ option:checked {
 }
 
 .transaction-item > span {
+  font-size: 20px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.transaction-item-control > span {
   font-size: 20px;
   color: var(--primary-color);
   font-weight: 600;

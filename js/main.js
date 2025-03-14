@@ -6,6 +6,7 @@ const currentDateSpan = document.querySelector('#current-date');
 const incomeCounterSpan = document.querySelector('#income-counter');
 const revenueCounterSpan = document.querySelector('#revenue-counter');
 const balanceCounterSpan = document.querySelector('#balance-counter');
+const percentageContainer = document.querySelector('#percentage-container');
 
 document.addEventListener('DOMContentLoaded', () => {
   const date = new Date();
@@ -105,10 +106,12 @@ const renderTransactions = () => {
     .reduce((acc, transaction) => acc + (+transaction.amount), 0);
 
   const balance = incomes - revenues;
+  const expensePercentage = Math.round((revenues * 100) / incomes);
 
   incomeCounterSpan.textContent = `$${incomes.toFixed(2)}`;
   revenueCounterSpan.textContent = `$${revenues.toFixed(2)}`;
   balanceCounterSpan.textContent = `$${balance.toFixed(2)}`;
+  percentageContainer.textContent = `${expensePercentage}%`;
 
   if (balance < 0) {
     balanceCounterSpan.classList.add('text-danger');
@@ -130,7 +133,7 @@ const renderTransactions = () => {
       <div class="transaction-item">
         <h2 class="text-system-color">${transaction.description}</h2>
         <div class="transaction-item-control d-flex gap-2 align-items-center">
-          <span class="text-system-color text-">${sign} $${amount}</span>
+          <span class="text-system-color">${sign} $${amount}</span>
           ${transaction.transactionType === '2' ? `<div id="percentage-container">${expensePercentage}%</div>` : ''}
           <button class="btn btn-danger btn-sm" type="button" onclick="deleteTransaction(${transaction.id})">X</button>
         </div>
