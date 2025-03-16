@@ -59,6 +59,14 @@ document.querySelector('#transaction-form').addEventListener('submit', (e) => {
     formObject[key] = value;
   });
 
+  const amount = parseFloat(formData.get("amount")); // Convertir el monto a número
+
+  // Validar que el monto sea positivo
+if (isNaN(amount) || amount <= 0) {
+    alert("El monto debe ser un número positivo.");
+    return;
+}
+
   // se agrega la transacción a la lista de transacciones
   transactions.push({ id: getNewId(), ...formObject });
   
